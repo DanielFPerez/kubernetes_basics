@@ -36,7 +36,7 @@ See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/compone
 
 Cluster nodes             |  Node elements
 :-------------------------:|:-------------------------:
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_cluster.png" width="400"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_overview.png" width="400">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_cluster.png" width="300"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_overview.png" width="300">
 
 - The **Control plane** manages the worker nodes, includes the **kube-scheduler**
 - kube-scheduler **assigns new pods to nodes**.
@@ -96,7 +96,7 @@ Change number of replicas:
 Would have this impact:
 1 replica             |  4 replicas
 :-------------------------:|:-------------------------:
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/scaling_1.png" width="400"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/scaling_4.png" width="400">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/scaling_1.png" width="300"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/scaling_4.png" width="300">
 
 
 
@@ -108,7 +108,7 @@ A `StateFulSet` is a deployment for stateful applications.
 
 Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a **Service**.
 
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/services.png" width="700">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/services.png" width="650">
 
 Services *allow your applications to receive traffic.*
 
@@ -131,5 +131,5 @@ It could contain, e.g. a URL to expose your database that does not depend on the
 
 **Secret** is like a ConfigMap for confidential information (e.g., user-password information).
 
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/configmap_secret.png" width="650">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/configmap_secret.png" width="600">
 Image taken from [TechWorld with Nana: Kubernetes Crash Course](https://www.youtube.com/watch?v=s_o8dwzRlu4)
