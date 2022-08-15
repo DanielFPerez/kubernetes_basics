@@ -26,7 +26,7 @@ Some of K8s features include:
 
 See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/).
 
-![Cluster](/imgs/cluster.png | width=20)
+![Cluster](/imgs/cluster.png | width=3)
 
 - A kubernetes **cluster** consists of **nodes** (physical machines or VMs).
 - **Nodes** host one or several pods
