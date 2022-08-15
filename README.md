@@ -48,3 +48,24 @@ Cluster nodes             |  Node elements
 - To make a **Container accessible from outside** the Kubernetes virtual network, you have to expose the Pod as a Kubernetes **Service**.
 - **each Pod** in a Kubernetes cluster **has a unique IP** address, even Pods on the same Node
 - A **Service** can be used to represent pods to the outside world and has a **fixed IP address**
+
+[Viewing Pods and Nodes](https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/)
+
+Anything that the application **would normally send to STDOUT becomes logs** for the container within the Pod.
+We can retrieve these logs using the **kubectl logs**
+
+
+- Start a bash of a container in the pod:
+`**kubectl exec -ti $POD_NAME -- bash**`
+
+- Show logs
+`**kubectl logs $POD_NAME**`
+
+
+## What is kubectl?
+
+CLI (command-line interface) command to interact with a kubernetes cluster. *NOTE*: the cluster must be already running.
+
+Common format of a kubectl command is: `**kubectl** **action** **resource**`:
+- **actions**: create, get, describe, etc.
+- **resource**: node, container
