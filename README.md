@@ -31,7 +31,7 @@ Installing kubeadm: https://kubernetes.io/docs/setup/production-environment/tool
 
 ## kubectl
 
-What is kubectl: #kubectl
+For what kubectl is, see [section below](#kubectl)
 Installation:
 https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
@@ -91,7 +91,7 @@ We can retrieve these logs using the **kubectl logs**
 `kubectl logs $POD_NAME`
 
 
-### [What is kubectl?](#kubectl)
+### [What is kubectl?][kubectl]
 
 CLI (command-line interface) command to interact with a kubernetes cluster. *NOTE*: the cluster must be already running.
 
