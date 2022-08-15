@@ -31,7 +31,7 @@ Installing kubeadm: https://kubernetes.io/docs/setup/production-environment/tool
 
 ## kubectl
 
-What is kubectl: # kubectl
+What is kubectl: #kubectl
 Installation:
 https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
