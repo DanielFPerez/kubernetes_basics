@@ -9,6 +9,7 @@ Finally, it makes the application accessible from the outside by offering it as 
 
 ## File creation order
 All of the files have been completed with comments explaining their structural parts.
+
 They should be read in the order in which they were created:
 1. mongo-config.yaml : ConfigMap of the database specifying the DB url
 2. mongo-secret.yaml: Secret file specifying environment variables
@@ -25,4 +26,4 @@ Follow these steps:
 2. Start ConfigMap: `kubectl apply -f mongo-config.yaml`
 3. Start Secret: `kubectl apply -f mongo-secret.yaml`
 4. Start Database app: `kubectl apply -f mongo.yaml`
-5. Start Webapp: ``
+5. Start Webapp: `kubectl apply -f webapp.yaml`
