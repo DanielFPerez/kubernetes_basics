@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config
+data:
+  # key-valu pairs
+  # in our case, we want the App url to be a service and not fixed to an IP
+  # this will be the endpoint for MongoDB
+  mongo-url: mongo-service

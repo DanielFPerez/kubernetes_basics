@@ -1,0 +1,62 @@
+# File that holds both Deployment and Service for the MongoDB app.
+# They are separated by ----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-deployment
+  labels:
+    app: mongo
+spec:
+  # how many pods you want to create in this deployment
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  # "template" defines the blueprint of the pods. It has its own "metadata"
+  # and its own "spec" sections
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:5.0
+        ports:
+        - containerPort: 27017
+        # REMEMBER: we need to pass the user login information to mongodb
+        # For that, we use environment variables as described in https://hub.docker.com/_/mongo
+        # Format:
+        #env:
+        #  - name:
+        #    value:
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+          # Get the value from a "secret.yaml" file
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret # file name
+              key: mongo-user # key
+          # same for the password
+          - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-password
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  # This name is the endpoint that we used to define mongo in "mongo-config.yaml"
+  name: mongo-service
+spec:
+  selector:
+    # this should match the label that we used to define the pods that belong to the service
+    app: mongo
+  ports:
+    - protocol: TCP
+      # access port. can be any port.
+      port: 27017
+      # targetPort should match the ConfigMap::spec.template.spec.port.containerPort
+      targetPort: 27017

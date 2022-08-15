@@ -1,0 +1,68 @@
+# File that holds both Deployment and Service for the webapp.
+# They are separated by ----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  # how many pods you want to create in this deployment
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  # "template" defines the blueprint of the pods. It has its own "metadata"
+  # and its own "spec" sections
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: nanajanashia/k8s-demo-app:v1.0
+        ports:
+        - containerPort: 3000
+        # as in mongo.yaml deployment/service, this webapp uses environment variables
+        # to connect with the MongoDB Database
+        env:
+          - name: USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              value: mongo-user
+          - name: USER_PWD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              value: mongo-password
+          # Here, we use the ConfigMap mongo-config.yaml definition of the URL
+          - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-config
+              value: mongo-url
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  # This name is the endpoint that we used to define mongo in "mongo-config.yaml"
+  name: webapp-service
+spec:
+  # "type" defines the type of service we like to deploy. Default is ClusterIP (cluster internal only)
+  # We change this to NodePort
+  type: NodePort
+  selector:
+    # this should match the label that we used to define the pods that belong to the service
+    app: webapp
+  ports:
+    - protocol: TCP
+      # access port. can be any port.
+      port: 3000
+      # targetPort should match the ConfigMap::spec.template.spec.port.containerPort
+      targetPort: 3000
+      # Nodeport required since the Service::type is NodePort
+      # NodePort must be in the ranges 30000 - 32767 (https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)
+      nodePort: 30100
