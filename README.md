@@ -22,7 +22,7 @@ Some of K8s features include:
 - includes an **automatic bin-packing**: You provide Kubernetes with a cluster of nodes that it can use to run containerized tasks. You tell Kubernetes how much CPU and memory (RAM) each container needs. Kubernetes can fit containers onto your nodes to make the best use of your resources.
 - lets users integrate their **logging**, **monitoring**, and alerting solutions.
 
-# Kubernetes Components
+## Kubernetes Components
 
 See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/).
 
@@ -70,6 +70,10 @@ CLI (command-line interface) command to interact with a kubernetes cluster. *NOT
 Common format of a kubectl command is: `kubectl <action> <resource>`:
 - **actions**: create, get, describe, etc.
 - **resource**: node, container
+
+*In order for kubectl to __find and access__ a Kubernetes cluster*, it needs a **kubeconfig** file, which is created automatically when you create a cluster using kube-up.sh or successfully deploy a Minikube cluster.
+
+By default, kubectl configuration is located at `~/.kube/config`.
 
 ## Deployments
 
