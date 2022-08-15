@@ -36,7 +36,7 @@ See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/compone
 
 Cluster nodes             |  Node elements
 :-------------------------:|:-------------------------:
-![](/imgs/node_cluster.png)  |  ![](/imgs/node_overview.png)
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_cluster.png" width="200"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_overview.png" width="200">
 
 - The **Control plane** manages the worker nodes, includes the **kube-scheduler**
 - kube-scheduler **assigns new pods to nodes**.
