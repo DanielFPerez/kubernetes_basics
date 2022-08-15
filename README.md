@@ -13,7 +13,7 @@ Tutorial showing basics:
 ## What is Kubernetes
 See [What is Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ ).
 
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/traditional_vs_virtualized_vs_container.png" width="400">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/traditional_vs_virtualized_vs_container.png" width="800">
 
 Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
 
@@ -27,7 +27,7 @@ Some of K8s features include:
 See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/).
 
 <!--- ![Cluster](/imgs/cluster.png | width=3) --->
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/cluster.png" width="400">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/cluster.png" width="800">
 
 - A kubernetes **cluster** consists of **nodes** (physical machines or VMs).
 - **Nodes** host one or several pods
@@ -36,7 +36,7 @@ See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/compone
 
 Cluster nodes             |  Node elements
 :-------------------------:|:-------------------------:
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_cluster.png" width="200"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_overview.png" width="200">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_cluster.png" width="400"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/node_overview.png" width="400">
 
 - The **Control plane** manages the worker nodes, includes the **kube-scheduler**
 - kube-scheduler **assigns new pods to nodes**.
