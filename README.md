@@ -93,6 +93,11 @@ Scaling is accomplished by changing the number of replicas in a Deployment
 
 Change number of replicas:
 `kubectl scale deployments/$DEPL_NAME --replicas=4`
+Would have this impact:
+1 replica             |  4 replicas
+:-------------------------:|:-------------------------:
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/scaling_1.png" width="400"> | <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/scaling_4.png" width="400">
+
 
 
 ## StateFulSets
@@ -127,3 +132,4 @@ It could contain, e.g. a URL to expose your database that does not depend on the
 **Secret** is like a ConfigMap for confidential information (e.g., user-password information).
 
 <img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/configmap_secret.png" width="650">
+Image taken from [TechWorld with Nana: Kubernetes Crash Course](https://www.youtube.com/watch?v=s_o8dwzRlu4)
