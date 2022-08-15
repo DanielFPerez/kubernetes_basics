@@ -21,4 +21,8 @@ For creating the cluster, the **ConfigMap**s and **Secret**s must exist before t
 
 Follow these steps:
 
-1. `hello`
+1. Go to where the files are located: `cd $REPO_HOME/basic_cluster`
+2. Start ConfigMap: `kubectl apply -f mongo-config.yaml`
+3. Start Secret: `kubectl apply -f mongo-secret.yaml`
+4. Start Database app: `kubectl apply -f mongo.yaml`
+5. Start Webapp: ``

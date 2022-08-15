@@ -31,18 +31,17 @@ spec:
         #  - name:
         #    value:
         env:
-          - name: MONGO_INITDB_ROOT_USERNAME
           # Get the value from a "secret.yaml" file
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret # file name
-              key: mongo-user # key
-          # same for the password
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: mongo-user
           - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: mongo-password
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: mongo-password
 ---
 # Service
 apiVersion: v1

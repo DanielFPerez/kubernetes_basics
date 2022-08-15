@@ -28,21 +28,21 @@ spec:
         # to connect with the MongoDB Database
         env:
           - name: USER_NAME
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              value: mongo-user
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: mongo-user
           - name: USER_PWD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              value: mongo-password
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: mongo-password
           # Here, we use the ConfigMap mongo-config.yaml definition of the URL
           - name: DB_URL
-          valueFrom:
-            configMapKeyRef:
-              name: mongo-config
-              value: mongo-url
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-config
+                key: mongo-url
 ---
 # Service
 apiVersion: v1
