@@ -13,7 +13,7 @@ Tutorial showing basics:
 ## What is Kubernetes
 See [What is Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ ).
 
-![Difference between traditional, virtualized and container deployments.](/imgs/traditional_vs_virtualized_vs_container.png)
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/traditional_vs_virtualized_vs_container.png" width="400">
 
 Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
 
@@ -27,7 +27,7 @@ Some of K8s features include:
 See [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/).
 
 <!--- ![Cluster](/imgs/cluster.png | width=3) --->
-<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/cluster.png" width="100">
+<img src="https://github.com/DanielFPerez/kubernetes_basics/blob/main/imgs/cluster.png" width="400">
 
 - A kubernetes **cluster** consists of **nodes** (physical machines or VMs).
 - **Nodes** host one or several pods
