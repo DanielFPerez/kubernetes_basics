@@ -8,6 +8,34 @@ Tutorial showing basics:
 **More extensive basic tutorial**
 [kubernetes basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 
+# Installation
+
+## Install Container Runtime
+
+Kubernetes requires a container runtime. For this, we install Docker, which also includes the [containerd runtime](https://containerd.io/).
+
+Installation is done according to the Dcoker documentation for Ubuntu: [Installing Using the repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+Remember to execute the [post-installation](https://docs.docker.com/engine/install/linux-postinstall/) instructions, which creates a `docker` linux group to use docker as non-root.
+
+## minikube
+
+minikube is a light-weight kubernetes for running a cluster only in one local machine.
+
+Installing minikube: https://minikube.sigs.k8s.io/docs/start/
+
+## kubeadm
+
+Full kubernetes cluster creation tool to create cluster across several machines.
+
+Installing kubeadm: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+## kubectl
+
+What is kubectl: # kubectl
+Installation:
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+
 # Concepts
 
 ## What is Kubernetes
@@ -43,7 +71,7 @@ Cluster nodes             |  Node elements
 
 
 
-## Pod
+### Pod
 
 - By default, the Pod is only accessible by its internal IP address within the Kubernetes cluster.
 - To make a **Container** **accessible** from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes **Service**.
@@ -63,7 +91,7 @@ We can retrieve these logs using the **kubectl logs**
 `kubectl logs $POD_NAME`
 
 
-## What is kubectl?
+### [What is kubectl?](#kubectl)
 
 CLI (command-line interface) command to interact with a kubernetes cluster. *NOTE*: the cluster must be already running.
 
@@ -75,7 +103,7 @@ Common format of a kubectl command is: `kubectl <action> <resource>`:
 
 By default, kubectl configuration is located at `~/.kube/config`.
 
-## Deployments
+### Deployments
 
 [What is a Kubernetes Deployment?](https://www.vmware.com/topics/glossary/content/kubernetes-deployment.html)
 A Kubernetes **Deployment** is used to tell Kubernetes how to create or modify instances of the pods that hold a containerized application.
@@ -86,7 +114,7 @@ The proxy can be terminated by pressing Ctrl-C and won't show any output while i
 
 In order for the new **Deployment** to be *accessible __without__ using the Proxy*, a **Service** is required
 
-### Application Scaling
+#### Application Scaling
 
 [Application Scaling tut](https://kubernetes.io/docs/tutorials/kubernetes-basics/scale/scale-intro/)
 When traffic increases, we will need to scale the application to keep up with user demand.
@@ -104,10 +132,10 @@ Would have this impact:
 
 
 
-## StateFulSets
+### StateFulSets
 A `StateFulSet` is a deployment for stateful applications.
 
-## Service
+### Service
 [Using a Service to Expose your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/ )
 
 Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a **Service**.
@@ -128,7 +156,7 @@ Services can be exposed in different ways by specifying a type in the **ServiceS
 
 Services are the abstraction that *allows pods to __die__ and __replicate__* in Kubernetes without impacting your application.
 
-## ConfigMap and Secret
+### ConfigMap and Secret
 
 **ConfigMap** is a key-value store used for storing information accessible to your pods.
 It could contain, e.g. a URL to expose your database that does not depend on the IP address of the Pod (which changes every time the Deployment shuts or instantiates a Pod).
